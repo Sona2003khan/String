@@ -1,0 +1,26 @@
+public class String_1 {
+    public static String remove_outermost_String(String s){
+        int n=s.length();
+        int count=0;
+        StringBuilder str=new StringBuilder();
+
+        for(int i=0;i<n;i++){
+            if(s.charAt(i) == ')'){
+                count--;
+            }
+            if(count != 0){
+                str.append(s.charAt(i));
+            }
+            if(s.charAt(i) =='('){
+                count++;
+            }
+        }
+        return str.toString();
+    }
+
+    public static void main(String[] args) {
+        String s="(()())(())";
+        String result=remove_outermost_String(s);
+        System.out.println(result);
+    }
+}
