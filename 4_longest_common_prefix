@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class String_1 {
+    public static String longest_common_prefix(String[] str){
+        int n=str.length;
+        Arrays.sort(str);
+        char st[]=str[0].toCharArray();
+        char end[]=str[n-1].toCharArray();
+        StringBuilder ans=new StringBuilder();
+
+        for(int i=0;i<Math.min(st.length, end.length);i++){
+            if(st[i] != end[i]){
+                break;
+            }
+            else{
+                ans.append(st[i]);
+            }
+        }
+        return ans.toString();
+    }
+    public static void main(String[] args) {
+        String str[]={"dog","racecar","car"};               //"flower","flow","flight   ans=fl
+        String result=longest_common_prefix(str);
+        System.out.println(result+" ");
+    }
+}
