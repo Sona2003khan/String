@@ -1,0 +1,21 @@
+public class String_2 {
+    public static String reverse_words_of_string(String s){
+        String str[]=s.trim().split("\\s+");
+        int left=0;
+        int right=str.length-1;
+
+        while (left < right) {
+            String temp=str[left];
+            str[left]=str[right];
+            str[right]=temp;
+            left++;
+            right--;
+        }
+           return String.join(" ",str);
+    }
+    public static void main(String[] args) {
+        String s="the sky is blue";
+        String result=reverse_words_of_string(s);
+        System.out.println(result);
+    }
+}
